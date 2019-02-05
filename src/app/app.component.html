@@ -1,3 +1,30 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane color="secondary">
+    <!--  our side menu  -->
+    <ion-menu #menu color="secondary">
+      <ion-header color="secondary" no-border style="text-align:center">
+        <ion-toolbar color="secondary" style="text-align:center">
+          <ion-title style="text-align: center;font-weight: normal;font-size: 1.1rem;margin-bottom:15px;margin-top:15px">Slide Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content color="secondary">
+        <ion-item color="secondary" lines="none">
+          <ion-icon slot="start" name="moon" color="light"></ion-icon>
+          <ion-label style="font-size:0.95rem">Pipe cambiar skin y translate</ion-label>
+          <ion-toggle slot="end" [(ngModel)]="skinmenu" (ionChange)="changeSkin($event)"></ion-toggle>
+        </ion-item>
+        <ion-item color="secondary" lines="none">
+          <ion-icon slot="start" name="globe" color="light"></ion-icon>
+          <ion-label style="font-size:0.95rem">{{"cambiarIdioma" | translate}}</ion-label>
+          <ion-toggle slot="end" [(ngModel)]="langmenu" (ionChange)="changeLang($event)"></ion-toggle>
+        </ion-item>
+      </ion-content>
+      <ion-footer>
+      </ion-footer>
+    </ion-menu>
+
+    <!-- the main content -->
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+
 </ion-app>

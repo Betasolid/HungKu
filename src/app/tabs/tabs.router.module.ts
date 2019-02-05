@@ -3,26 +3,27 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
 
+/* Aqui es donde estan enrutadas las tabs para que puedas navegar entre ellas */
 const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'tabInicio',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../tabInicio/tabInicio.module#TabInicioPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'tabListado',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../tabListado/tabListado.module#TabListadoPageModule'
           }
         ]
       },
@@ -37,14 +38,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tabInicio',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/tabInicio',
     pathMatch: 'full'
   }
 ];

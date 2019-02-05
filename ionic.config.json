@@ -1,5 +1,7 @@
 {
   "name": "HungKu",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,17 @@
+{
+    "toolEventos" : "Events",
+    "toolListado" : "List",
+    "tabInicio" : "Events",
+    "tabListado" : "List",
+    "cambiarIdioma" : "English",
+    "segmentProximos" : "Near",
+    "segmentNuevo" : "New",
+    "botonAceptar" : "Submit",
+    "botonCancelar" : "Cancel",
+    "addParticipantes" : "Add participants",
+    "editarParticipante" : "Participant",
+    "formularioNombre" : "Name",
+    "formularioLocalizacion" : "Location",
+    "formularioDescripcion" : "Description",
+    "formularioEdad" : "Age"
+}

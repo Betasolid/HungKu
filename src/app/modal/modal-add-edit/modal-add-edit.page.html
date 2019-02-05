@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{"editarParticipante" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+<!--Formulario que muestra los datos del participante y lo modifica-->
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-input type="text" formControlName="nombre" placeholder="{{'formularioNombre' | translate}}" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-input type="text" formControlName="edad" placeholder="{{'formularioEdad' | translate}}" [(ngModel)]="edad"></ion-input>
+    </ion-item>
+    <ion-button shape="round" color="success" fill="outline" type="submit" [disabled]="!todo.valid">{{"botonAceptar" | translate}}</ion-button>
+    <ion-button shape="round" color="danger" fill="outline" (click)="dismiss()">{{"botonCancelar" | translate}}</ion-button>
+  </form>
+</ion-content>

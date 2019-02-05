@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{"addParticipantes" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <!--Formulario que sirve solo para añadir participantes-->
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-input type="text" formControlName="nombre" placeholder="{{'formularioNombre' | translate}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label></ion-label>
+      <ion-input type="text" formControlName="edad" placeholder="{{'formularioEdad' | translate}}"></ion-input>
+    </ion-item>
+    <ion-button shape="round" color="success" fill="outline" type="submit" [disabled]="!todo.valid">{{"botonAceptar" | translate}}</ion-button>
+    <ion-button shape="round" color="danger" fill="outline" (click)="dismiss()">{{"botonCancelar" | translate}}</ion-button>
+  </form>
+</ion-content>

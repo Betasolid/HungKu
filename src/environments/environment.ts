@@ -3,7 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  /* Configuracion de firebase */
+  firebaseConfig: {
+    apiKey: 'AIzaSyD00jDzb7pZ9UJSPfbWeSX6U7rMmEtpHFk',
+    authDomain: 'hungku-9a6f4.firebaseapp.com',
+    databaseURL: 'https://hungku-9a6f4.firebaseio.com',
+    projectId: 'hungku-9a6f4',
+    storageBucket: 'hungku-9a6f4.appspot.com',
+    messagingSenderId: '729703020958',
+    personasColeccion: 'personasC',
+    eventosColeccion: 'eventosC'
+  },
+  currentLanguages: ['es', 'en'], // idiomas disponibles de la aplicación
+  defaultLanguage: 'es',  // idioma por defecto
+  // defaultSkin: 'light',  // tema por defecto
 };
 
 /*

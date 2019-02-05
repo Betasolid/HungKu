@@ -1,0 +1,19 @@
+{
+    "toolEventos" : "Eventos",
+    "toolListado" : "Listado",
+    "tabInicio" : "Eventos",
+    "tabListado" : "Listado",
+    "cambiarIdioma" : "Español",
+    "segmentProximos" : "Proximos",
+    "segmentNuevo" : "Nuevo",
+    "botonAceptar" : "Aceptar",
+    "botonCancelar" : "Cancelar",
+    "addParticipantes" : "Añadir Participantes",
+    "editarParticipante" : "Participante",
+    "formularioNombre" : "Nombre",
+    "formularioLocalizacion" : "Localizacion",
+    "formularioDescripcion" : "Descripcion",
+    "formularioEdad" : "Edad"
+    
+
+}
