@@ -18,7 +18,6 @@ export class ModalSoloAddPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private todoS: TodoservicioService,
-    private router: Router,
     public loadingController: LoadingController,
     public modalController: ModalController
   ) {

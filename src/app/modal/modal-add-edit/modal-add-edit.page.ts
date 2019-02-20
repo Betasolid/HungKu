@@ -9,10 +9,11 @@ import { LoadingController, ModalController, NavParams } from '@ionic/angular';
   templateUrl: './modal-add-edit.page.html',
   styleUrls: ['./modal-add-edit.page.scss'],
 })
+
 export class ModalAddEditPage implements OnInit {
 
   private todo: FormGroup;
-  myloading: any;
+  myLoading: any;
   valores: any;
   id: any;
   nombre: any;
@@ -41,7 +42,7 @@ export class ModalAddEditPage implements OnInit {
     };
 
     /* Mostramos el cargando... */
-    this.myloading = this.presentLoading();
+    this.myLoading = this.presentLoading();
     this.todoS.actualizaParticipante(this.id, data)
       .then((docRef) => {
         /* Cerramos el cargando...*/
@@ -57,10 +58,10 @@ export class ModalAddEditPage implements OnInit {
 
   /*Crea la ventana de loading en la app */
   async presentLoading() {
-    this.myloading = await this.loadingController.create({
+    this.myLoading = await this.loadingController.create({
       message: 'Guardando'
     });
-    return await this.myloading.present();
+    return await this.myLoading.present();
   }
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+import { ModalEventosPage } from './modal/modal-eventos/modal-eventos.page';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ModalAddEditPage } from './modal/modal-add-edit/modal-add-edit.page';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import { ModalSoloAddPage } from './modal/modal-solo-add/modal-solo-add.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { Camera } from '@ionic-native/camera/ngx';
 
 
 export function setTranslateLoader(http: any) {
@@ -24,8 +26,8 @@ export function setTranslateLoader(http: any) {
 }
 
 @NgModule({
-  declarations: [AppComponent, ModalAddEditPage, ModalSoloAddPage],
-  entryComponents: [ModalAddEditPage, ModalSoloAddPage],
+  declarations: [AppComponent, ModalAddEditPage, ModalSoloAddPage, ModalEventosPage],
+  entryComponents: [ModalAddEditPage, ModalSoloAddPage, ModalEventosPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -49,6 +51,7 @@ export function setTranslateLoader(http: any) {
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

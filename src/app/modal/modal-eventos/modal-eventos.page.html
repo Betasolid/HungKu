@@ -1,0 +1,23 @@
+<ion-header no-border color="primary">
+  <ion-toolbar color="primary">
+    <ion-title>Modal Info Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <!--  <ion-img [src]="img"></ion-img>   -->
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>{{"nombreEvento" | translate}}</ion-label>
+      <ion-input type="text" formControlName="nombre" [readonly]="isReadonly" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{"localizacionEvento" | translate}}:</ion-label>
+      <ion-input formControlName="localizacion" [readonly]="isReadonly" [(ngModel)]="localizacion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{"descripcionEvento" | translate}}:</ion-label>
+      <ion-textarea type="text" formControlName="descripcion" [readonly]="isReadonly" [(ngModel)]="descripcion"></ion-textarea>
+    </ion-item>
+    <ion-button shape="round" color="success" fill="outline" (click)="dismiss()">{{"botonAceptar" | translate}}</ion-button>
+  </form>
+</ion-content>

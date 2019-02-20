@@ -1,7 +1,6 @@
 import { ModalAddEditPage } from './../modal/modal-add-edit/modal-add-edit.page';
 import { Component, ViewChild } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
 import { TodoservicioService } from './../servicios/todoservicio.service';
@@ -20,7 +19,6 @@ export class TabListadoPage {
   constructor(
     private todoService: TodoservicioService,
     public loadingController: LoadingController,
-    private router: Router,
     private modalController: ModalController,
     public actionSheetController: ActionSheetController
   ) {
