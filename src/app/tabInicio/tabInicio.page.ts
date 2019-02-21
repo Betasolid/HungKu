@@ -31,6 +31,15 @@ export class TabInicioPage {
   listadoEvent = [];
   style: any;
 
+  /**
+   * Constructor de la clase
+   * @param todoService Servicios
+   * @param loadingController Controlador del cargando
+   * @param router
+   * @param modalController Controlador del modal
+   * @param formBuilder Constructor del formulario
+   * @param camera
+   */
   constructor(
     private todoService: TodoservicioService,
     public loadingController: LoadingController,
@@ -47,7 +56,6 @@ export class TabInicioPage {
     });
   }
 
-  /** */
   logForm() {
     const data = {
       nombre: this.evento.get('nombre').value,
@@ -79,7 +87,9 @@ export class TabInicioPage {
       });
   }
 
-  /* Metodo que se lanza al inicio de la pantalla */
+  /**
+   * Metodo que se lanza al inicio de la pantalla
+   */
   ionViewDidEnter() {
     this.presentLoading('Cargando');
     this.todoService.getListadoEventos()
@@ -115,7 +125,11 @@ export class TabInicioPage {
       });
   }
 
-  /*Muestra la pantalla de cargando cuando se inicia el componente */
+  /**
+   * Muestra la pantalla de cargando cuando se inicia el componente
+   * @param msg Mensaje que vamos a mostrar en el cargando
+   * @returns Promise
+   */
   async presentLoading(msg) {
     const myloading = await this.loadingController.create({
       message: msg
@@ -123,7 +137,14 @@ export class TabInicioPage {
     return await myloading.present();
   }
 
-  // Este metodo tiene que llamar al modal para crear un nuevo miembro
+  /**
+   * Metodo que muestra un modal con la informacion del evento
+   * @param id Id del evento en la base de datos
+   * @param nombre
+   * @param localizacion
+   * @param descripcion
+   * @returns Promise
+   */
   async presentModalEvent(id, nombre, localizacion, descripcion) {
     const modal = await this.modalController.create({
       component: ModalEventosPage,

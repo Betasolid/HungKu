@@ -19,6 +19,15 @@ export class ModalAddEditPage implements OnInit {
   nombre: any;
   edad: any;
 
+  /**
+   * Constructor de la clase
+   * @param formBuilder Constructo del formulario
+   * @param todoS Servicios
+   * @param router
+   * @param loadingController Controlador del loading
+   * @param modalController Controllador del modal
+   * @param navParams Parametros de navegacion
+   */
   constructor(
     private formBuilder: FormBuilder,
     private todoS: TodoservicioService,
@@ -56,7 +65,9 @@ export class ModalAddEditPage implements OnInit {
       });
   }
 
-  /*Crea la ventana de loading en la app */
+  /**
+   * Crea la ventana de loading en la app
+   */
   async presentLoading() {
     this.myLoading = await this.loadingController.create({
       message: 'Guardando'
@@ -68,7 +79,9 @@ export class ModalAddEditPage implements OnInit {
     console.log(this.nombre, this.edad);
   }
 
-  /*Cierra la ventana del modal de la aplicacion*/
+  /**
+   * Cierra la ventana del modal de la aplicacion
+   */
   dismiss() {
     this.modalController.dismiss();
   }

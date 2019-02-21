@@ -13,50 +13,63 @@ export class TodoservicioService {
     this.myCollectionPersonas = fireStore.collection<any>(environment.firebaseConfig.personasColeccion);
     this.myCollectionEventos = fireStore.collection<any>(environment.firebaseConfig.eventosColeccion);
   }
-  /*
-  Recibe un objeto y lo guarda como un documento nuevo en la colección Personas
-  */
+
+  /**
+   * Metodo que agregar un participante a la base de datos
+   * @param datos son los datos del formulario para añadir participante
+   * @returns Promise
+   */
   agregaParticipante(datos) {
     return this.myCollectionPersonas.add(datos);
   }
-  /*
-  Recibe un objeto y lo guarda como documento nuevo en la coleccion de Eventos
+
+ /**
+  * Metodo para agregar un evento a la base de datos
+  * @param datos son los datos del formulario para añadir un evento
   */
   agregaEventos(datos) {
     return this.myCollectionEventos.add(datos);
   }
-  /*
-  Recupera el listado de participantes
-  Devuelve un Observable
+
+ /**
+  * Metodo que devuelve el listado de los participantes
+  * @returns Promise
   */
   getListadoParticipantes() {
     return this.myCollectionPersonas.get();
   }
-  /*
-  Recupera el listado de los eventos
+
+ /**
+  * Metodo que devuelve el listado de eventos
+  * @returns Promise
   */
  getListadoEventos() {
    return this.myCollectionEventos.get();
  }
-  /*
-  Recupera todos los campos de un participante concreto identificado por la clave id de la
- colección participantes
-  Devuelve un Observable
+
+ /**
+  * Metodo que devuelve un participante segun su id
+  * @param id
+  * @returns Observable
   */
   leeParticipante(id) {
     return this.myCollectionPersonas.doc(id).get();
   }
-  /*
-  Actualiza los campos (sobreescribe y añade) determinados por data en el
- participante identificado por id de la colección participantes
-  Devuelve un Promise
+
+ /**
+  * Metodo que actualiza la informacion de un participante en la base de datos
+  * @param id Es el id del participante a actualizar
+  * @param data Son los datos nuevos para actualizar el participante
+  * @returns Observable
   */
   actualizaParticipante(id, data) {
     return this.myCollectionPersonas.doc(id).set(data);
   }
-  /*
-  Elimina el participante identificado por id de la colección participantes
-  Devuelve un Promise
+
+ /**
+  * Metodo que elimina un participante de la base de datos por su ID
+  * @param id Id del participante que se va a eliminar
+  * @return Observable
   */
   borraParticipante(id) {
     return this.myCollectionPersonas.doc(id).delete();

@@ -14,6 +14,13 @@ export class ModalEventosPage implements OnInit {
   private todo: FormGroup;
   myLoading: any;
 
+  /**
+   * Constructor de la clase
+   * @param formBuilder Constructor del formulario
+   * @param todoS Servicios
+   * @param loadingController Controlador del cargando
+   * @param modalController Controlador del modal
+   */
   constructor(
     private formBuilder: FormBuilder,
     private todoS: TodoservicioService,
@@ -30,6 +37,9 @@ export class ModalEventosPage implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Metodo para cerrar el modal
+   */
   dismiss() {
     this.modalController.dismiss();
   }

@@ -15,6 +15,13 @@ export class ModalSoloAddPage implements OnInit {
   private todo: FormGroup;
   myLoading: any;
 
+  /**
+   * Constructos de la clase
+   * @param formBuilder Constructor del formulario
+   * @param todoS Servicios
+   * @param loadingController Controllador del cargando
+   * @param modalController Controllador del modal
+   */
   constructor(
     private formBuilder: FormBuilder,
     private todoS: TodoservicioService,
@@ -49,7 +56,6 @@ export class ModalSoloAddPage implements OnInit {
       })
       .catch((error) => {
         console.error('Error insertando documento: ', error);
-        /* Cerramos el cargando...*/
         this.loadingController.dismiss();
       });
   }
@@ -64,6 +70,9 @@ export class ModalSoloAddPage implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Metodo para cerrar el modal
+   */
   dismiss() {
     this.modalController.dismiss();
   }

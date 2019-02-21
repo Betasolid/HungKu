@@ -15,7 +15,14 @@ export class TabListadoPage {
   @ViewChild('dynamicList') dynamicList;
   listado = [];
   listadoPanel = [];
-  // Constructor
+
+  /**
+   * Constructor de la clase
+   * @param todoService Servicios
+   * @param loadingController Controlador del cargando
+   * @param modalController Controlador del modal
+   * @param actionSheetController Controlador del actionSheet
+   */
   constructor(
     private todoService: TodoservicioService,
     public loadingController: LoadingController,
@@ -23,7 +30,7 @@ export class TabListadoPage {
     public actionSheetController: ActionSheetController
   ) {
   }
-  /* Analizar el ciclo de vida de los componentes: justo cuando se hace activa */
+
   ionViewDidEnter() {
     this.presentLoading('Cargando');
     this.todoService.getListadoParticipantes()
@@ -53,6 +60,10 @@ export class TabListadoPage {
       });
   }
 
+  /**
+   * Metodo de loading
+   * @param msg Mensaje a mostrar en el loading
+   */
   async presentLoading(msg) {
     const myloading = await this.loadingController.create({
       message: msg
@@ -94,6 +105,11 @@ export class TabListadoPage {
     return await modal.present();
   }
 
+  /**
+   * Action sheet para borrar
+   * @param id Id del elemento a borrar
+   * @returns Promise
+   */
   async presentActionSheet(id) {
     const actionSheet = await this.actionSheetController.create({
       header: '¿Desea eliminar esta persona?',
